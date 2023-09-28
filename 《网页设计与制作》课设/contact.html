@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>留言板</title>
+
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/logo.jpg" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/jquery-3.1.0.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
+
+    <style>
+      #tf-menu a.navbar-brand {
+        color: #fd5673;
+      }
+
+      #tf-menu.navbar-default .navbar-nav > li > a {
+        color: #fd5673;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 导航栏 -->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+          >
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Danny's Blog</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html" class="page-scroll">首页</a></li>
+            <li><a href="index.html" class="page-scroll">博文</a></li>
+            <li><a href="photoes.html" class="page-scroll">相册</a></li>
+            <li><a href="contact.html" class="page-scroll">留言板</a></li>
+            <li><a href="mobile.html" class="page-scroll">手机端</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 联系 -->
+    <div id="tf-contact" class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="section-title center">
+              <h2><strong>留言板</strong></h2>
+              <div class="line">
+                <hr />
+              </div>
+              <div class="clearfix"></div>
+              <!-- 一句鼓励性的话语,呈现更小的字体并加强语气的强调效果 -->
+<small><em>
+  (￣▽￣)”如果你有好的想法，请在此处留言，和我分享，我一定会认真回复的！
+</em></small>
+            </div>
+<!-- 留言联系表单 -->
+<form>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="exampleInputName">姓名</label>
+        <!-- 姓名输入框 -->
+        <input
+          type="text"
+          name="realname"
+          class="form-control"
+          id="exampleInputName"
+          placeholder="请输入姓名"
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="exampleInputEmail1">邮箱</label>
+        <!-- 邮箱输入框 -->
+        <input
+          type="email"
+          name="mail"
+          class="form-control"
+          id="exampleInputEmail1"
+          placeholder="请输入邮箱"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">信息</label>
+    <!-- 信息输入框 -->
+    <textarea name="text" class="form-control" rows="3"></textarea>
+  </div>
+  <!-- 表单提交按钮 -->
+  <button type="submit" id="submit" class="btn tf-btn btn-default">
+    提交
+  </button>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 页脚 -->
+    <nav
+      id="footer"
+      class="navbar navbar-default navbar-fixed-bottom"
+      role="navigation"
+    >
+      <div class="container">
+        <div class="fnav">
+          <p class="text-center">版权所有 &copy; 2023 Danny 保留所有权利。</p>
+        </div>
+      </div>
+    </nav>
+  </body>
+  <script>
+    $(document).ready(function ()  {
+      //------------------导航栏--------------------
+      // 使用了 jQuery 库的 `hover()` 函数，监听了页面上所有链接 `a` 元素的鼠标移入和移出事件。
+      // 这段代码实现了一个简单的鼠标移入移出效果，
+      // 当鼠标移入导航菜单的字体链接时，链接字体变成了粉色，
+      // 移出字体时，链接字体又恢复原来的颜色。
+      $("a").hover(
+        function () {
+          $(this).css("color", "pink");
+        },
+        function () {
+          $(this).css("color", "#fd5673");
+        }
+      );
+
+//----------------- 文字跳动 ---------------
+// 获取元素并设置初始样式
+var em = $("small em");
+em.css({ position: "relative", top: "0px" });
+// 定义两个动画函数jumpUp()和jumpDown(),分别用于执行上跳和下跳动画
+function jumpUp() {
+  //在上跳动画中，使用{top: "-10px"}指定了文本需要向上移动 10 像素
+  em.animate({ top: "-10px" }, 200, function () {
+    jumpDown(); // 在动画完成后调用了下跳动画
+  });
+}
+// 在下跳动画中，将{top: "0px"}作为参数，使文本回归到原始状态
+function jumpDown() {
+  em.animate({ top: "0px" }, 200, function () {
+    jumpUp(); // 再次调用上跳动画
+  });
+}
+// 设置定时器
+setInterval(jumpDown, 2000); // 使用setInterval()函数将上跳/下跳动画设置为定时重复执行，并将周期设置 2秒钟。这样，文字就会在页面上自动跳动
+
+      //------------------- 鼠标悬浮按钮效果------------------
+      // 使用 jQuery 的 `fadeOut()` 和 `fadeIn()` 函数来实现一个淡入淡出的效果。
+      // 这段代码会给按钮添加鼠标悬浮效果，
+      // 在按钮淡出消失之后将背景色和字体颜色分别调成白色和红色，然后淡入出现。
+      // 当鼠标移开时，又会触发淡出效果，然后将颜色再次恢复原来的状态。
+      $("#submit").hover(
+        function () {
+          $(this).fadeOut(200, function () {
+            $(this).css("background-color", "#ffffff"); //
+            $(this).css("color", "#fd5673");
+            $(this).fadeIn(200); //淡入时间
+          });
+        },
+        function () {
+          $(this).fadeOut(200, function () {
+            $(this).css("background-color", "#fd5673");
+            $(this).css("color", "#ffffff");
+            $(this).fadeIn(200);
+          });
+        }
+      );
+
+//-------------------GET 请求---------------------
+// 这段代码的作用是实现一个简单的 AJAX 交互，在用户点击提交按钮时，向指定的 URL 提交表单信息，并接受服务器返回的数据。
+// 使用了jQuery的标签、属性过滤选择器，选择了所有 type 属性为 "submit" 的按钮元素，然后给这些按钮元素添加了一个 "click" 事件的监听器。
+$("button[type=submit]").on("click", function () {
+  // 获取三个表单输入框的值，分别是姓名、邮箱和信息的值。
+  var realname = $("input[name=realname]").val();
+  var mail = $("input[name=mail]").val();
+  var text = $("textarea").val();
+  // 使用jQuery的ajax()函数
+  $.ajax({
+    url: "http://localhost:8080/get", // 向指定的 URL（http://localhost:8080/get）发起一个GET请求
+    data: {
+      //将表单数据作为请求参数传递。
+      realname: realname,
+      mail: mail,
+      text: text,
+    },
+    type: "GET", // 提交方式为GET
+    success: function (data) {
+      //  如果请求成功，就会执行一个回调函数，这里的回调函数只是简单地输出一个字符串 "123" 到控制台中。
+      console.log(123);
+    },
+  });
+});
+    });
+  </script>
+</html>

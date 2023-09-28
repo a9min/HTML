@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1685021095828') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 25px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* 相册 */
+.icon-xiangce:before {
+  content: "\e7f1";
+  color: #fd5673;
+  font-size: 20px;
+}
+/* 直播 */
+.icon-02f:before {
+  content: "\e609";
+  color: rgb(43, 177, 226);
+}
+/* 推荐 */
+.icon-tuijian:before {
+  content: "\e63f";
+  font-size: 30px;
+  color: aqua;
+}
+/* 热度 */
+.icon-redu:before {
+  content: "\e67b";
+  font-size: 28px;
+  color: red;
+}
+/* 排行榜 */
+.icon-caipinpaihangbang:before {
+  content: "\e660";
+  color: #f58033;
+}
+/* 学习 */
+.icon-wodexuexi:before {
+  content: "\e61d";
+  color: rgb(16, 201, 139);
+}
+/* 荣誉榜 */
+.icon-rongyubang:before {
+  content: "\e611";
+  color: rgb(234, 234, 15);
+}
+/* 关注 */
+.icon-guanzhu:before {
+  content: "\e61c";
+  color: red;
+}
+/* 栏目 */
+.icon-lanmu:before {
+  content: "\e7fa";
+}
+/* 文章 */
+.icon-wenzhang:before {
+  content: "\ecb3";
+}
+/* 问答 */
+.icon-wenda:before {
+  content: "\ecb4";
+  color: rgb(101, 204, 58);
+}
+/* 推荐 */
+.icon-tuijian1:before {
+  content: "\ff3d";
+}
+/* 我的 */
+.icon-wodexuanzhong-01:before {
+  content: "\e682";
+}
+/* 资讯 */
+.icon-zixunxuanzhong-01:before {
+  content: "\e692";
+  color: #fd5673;
+  font-size: 20px;
+}
+
+/* 首页 */
+.icon-shouyexuanzhong-01:before {
+  content: "\e693";
+  color: #fd5673;
+  font-size: 20px;
+}
+
+/* 电话 */
+.icon-dianhua-01-01:before {
+  content: "\e69b";
+}
+
+/* 资讯 */
+.icon-zixun-01:before {
+  content: "\e69d";
+}
+
